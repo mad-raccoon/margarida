@@ -2,6 +2,7 @@ import { useState } from "react";
 import Login from "../../features/Login/Login";
 import Register from "../../features/Register/Register";
 import Header from "../../shared/Header/Header";
+import Menu from "../../shared/Menu/Menu";
 
 const NoAuthPage =()=> {
 
@@ -17,15 +18,17 @@ const handleLogin =(value)=> {
   // error >> alert("wrong credentials")
 }
 
-const handleRegister =()=> {
+const handleRegister =(value)=> {
   // api call
   // success >> aler("success")
   // error >> alert("something wrong happen, try again later")
+  //console.log(value)
 }
 
     return <div>
       <Header/>
-      {showLogin? <Login onSubmit={handleLogin}/> : <Register/>}
+      <Menu/>
+      {showLogin? <Login onSubmit={handleLogin}/> : <Register onSubmit={handleRegister}/>}
     <button onClick={handleToggleClick}>{showLogin ? "show register" : "show login"}</button>
     </div>
   }
