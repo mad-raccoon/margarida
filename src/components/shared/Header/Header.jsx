@@ -1,7 +1,7 @@
 import "./Header.css"
 
 const Header =({hasLogout, onLogout})=> {
-    return <div className="header">i am header
+    return <div className="header">Margarida APP
    {hasLogout && <button onClick={onLogout}>Logout</button>}
     <ul>
     <li>PT</li>
