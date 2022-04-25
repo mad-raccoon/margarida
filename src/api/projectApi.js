@@ -1,7 +1,7 @@
-let dummyProjects = [{id: 1, title: "project 1", content: "project 1 content", keywords: ["art", "math"]}, 
-{id: 2, title: "project 2", content: "project 2 content", keywords: ["art", "math", "science"]},
+let dummyProjects = [{id: 1, title: "project 1", content: "project 1 content", keywords: ["art", "math"], isVisible: true} , 
+{id: 2, title: "project 2", content: "project 2 content", keywords: ["art", "math", "science"], isVisible: true},
 {id: 3, title: "project 3", content: "project 3 content", keywords: ["math"]},
-{id: 4, title: "project 4", content: "project 4 content", keywords: ["art", "science"]}]
+{id: 4, title: "project 4", content: "project 4 content", keywords: ["art", "science"], isVisible: true} ]
 
 
 const getProjects =()=> {

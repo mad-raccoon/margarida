@@ -32,7 +32,6 @@ const Projects =()=> {
 
     const projectFiltered = projectList.filter(x=> keyword === "" || x.keywords.includes(keyword));
     
-
     return <div>
         Search keyword: 
         <form onSubmit={handleKeywordSearch}>
@@ -40,7 +39,7 @@ const Projects =()=> {
         <button type="submit">Search !</button>
         </form>
 
-       {projectFiltered.map(item => item.isVisible || user.isAuthenticated ? <Project  key={item.id} {...item} onEdit={(values)=> handleEdit(item.id, values)}/> : null)}
+       {projectFiltered.map(item => item.isVisible ? <Project  key={item.id} {...item} onEdit={(values)=> handleEdit(item.id, values)}/> : null)}
     </div>
 }
 

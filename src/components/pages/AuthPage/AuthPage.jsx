@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/userSlice";
 import Projects from "../../features/Projects/Projects";
 import Header from "../../shared/Header/Header";
@@ -27,7 +27,14 @@ const displaySubpage = (value) => {
 }
 
 const AuthPage =()=> {
-  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user);
+console.log(
+  user.role
+
+); 
+
+const dispatch = useDispatch();
     const [subpage, setSubpage]  = useState("Home")
     
   const handleMenuClick = (item) => {setSubpage(item)}
@@ -38,7 +45,7 @@ const AuthPage =()=> {
 
    return <div>
         <Header hasLogout onLogout={handleLogout}/>
-        <Menu items={getMenuItems(true)} onClick={handleMenuClick}/>
+        <Menu items={getMenuItems(user.role === "admin")} onClick={handleMenuClick}/>
         {displaySubpage(subpage)}
     </div>
   }

@@ -4,7 +4,7 @@ const initialState = {
     isAuthenticated: false, 
     email: null, 
     username: null, 
-    roles: [],
+    role: null,
 }
 
 export const userSlice = createSlice({
@@ -15,13 +15,13 @@ export const userSlice = createSlice({
           state.username =  action.payload.username;
           state.email =  action.payload.email;
           state.isAuthenticated =  true;
-          state.roles =  action.payload.roles;
+          state.role =  action.payload.role;
       },
       logout: (state)=> {
         state.username =  null;
         state.email =  null;
         state.isAuthenticated =  false;
-        state.roles =  [];
+        state.role =  null;
       },
   },
 })
