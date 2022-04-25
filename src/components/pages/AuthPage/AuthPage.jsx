@@ -40,7 +40,6 @@ const AuthPage =()=> {
         <Header hasLogout onLogout={handleLogout}/>
         <Menu items={getMenuItems(true)} onClick={handleMenuClick}/>
         {displaySubpage(subpage)}
-      authenticate page
     </div>
   }
 

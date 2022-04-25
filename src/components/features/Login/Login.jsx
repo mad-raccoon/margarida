@@ -13,7 +13,7 @@ const Login =({onSubmit})=> {
         <form onSubmit={handleSubmit}>
             Username:
             <br/>
-            <input type="string" name="username" required/>
+            <input type="text" name="username" required/>
             <br/>
             Password:
             <br/>
