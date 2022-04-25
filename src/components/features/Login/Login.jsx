@@ -1,4 +1,9 @@
+import { useTranslation } from 'react-i18next'
+
 const Login =({onSubmit})=> {
+
+
+    const {t} = useTranslation();
 
     const handleSubmit =(event)=> {
         event.preventDefault();
@@ -11,15 +16,15 @@ const Login =({onSubmit})=> {
 
     return <div>
         <form onSubmit={handleSubmit}>
-            Username:
+            {t("label.username")}
             <br/>
             <input type="text" name="username" required/>
             <br/>
-            Password:
+            {t("label.password")}
             <br/>
             <input type="password" name="password" required/>
             <br/>
-            <button type="submit">LOGIN</button>
+            <button type="submit"> {t("button.login")}</button>
         </form>
     </div>
 }
