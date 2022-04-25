@@ -1,4 +1,5 @@
-const dummyUsers = [{username: "margarida", email:"m@m.com",   password: "w"}, {username: "ana", email:"a@a.com",  password: "w"}]
+const dummyUsers = [{username: "margarida", email:"m@m.com", roles: ["admin"]}, 
+{username: "ana", email:"a@a.com",  password: "w", roles: ["member"]}]
 
  const authenticate =(username, password)=> {
 

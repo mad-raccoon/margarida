@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { authApi } from "../../../api/authApi";
+import { login } from "../../../store/userSlice";
 import Login from "../../features/Login/Login";
 import Register from "../../features/Register/Register";
 import Header from "../../shared/Header/Header";
 import Menu from "../../shared/Menu/Menu";
 
 const NoAuthPage =()=> {
-
+  const dispatch = useDispatch()
 const [showLogin, setShowLogin] = useState(true);
 
 const handleToggleClick =()=> {
@@ -15,8 +17,7 @@ const handleToggleClick =()=> {
 
 const handleLogin =async(value)=> {
   const res = await authApi.authenticate("margarida", "test");
-  console.log(res.user);
-  // set redux
+  dispatch(login(res.user))
 }
 
 const handleRegister =(value)=> {

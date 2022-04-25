@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../store/userSlice";
 import Projects from "../../features/Projects/Projects";
 import Header from "../../shared/Header/Header";
 import Home from "../../shared/Home/Home";
@@ -25,11 +27,17 @@ const displaySubpage = (value) => {
 }
 
 const AuthPage =()=> {
+  const dispatch = useDispatch();
     const [subpage, setSubpage]  = useState("Home")
     
   const handleMenuClick = (item) => {setSubpage(item)}
-    return <div>
-        <Header hasLogout />
+   
+  const handleLogout =()=> {
+    dispatch(logout())
+  } 
+
+   return <div>
+        <Header hasLogout onLogout={handleLogout}/>
         <Menu items={getMenuItems(true)} onClick={handleMenuClick}/>
         {displaySubpage(subpage)}
       authenticate page
