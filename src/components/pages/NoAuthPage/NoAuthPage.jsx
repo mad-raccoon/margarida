@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { authApi } from "../../../api/authApi";
 import Login from "../../features/Login/Login";
 import Register from "../../features/Register/Register";
 import Header from "../../shared/Header/Header";
@@ -12,10 +13,10 @@ const handleToggleClick =()=> {
   setShowLogin(!showLogin)
 }
 
-const handleLogin =(value)=> {
-  // api call
-  // success >> set context user
-  // error >> alert("wrong credentials")
+const handleLogin =async(value)=> {
+  const res = await authApi.authenticate("margarida", "test");
+  console.log(res.user);
+  // set redux
 }
 
 const handleRegister =(value)=> {

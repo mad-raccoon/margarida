@@ -2,14 +2,12 @@ const dummyUsers = [{username: "margarida", email:"m@m.com",   password: "w"}, {
 
  const authenticate =(username, password)=> {
 
-    // TODO: replace with real api
+   return new Promise((resolve, reject) => {
     const user = dummyUsers.find(x=>x.username === username);
 
-   if(user && user.password === password) {
-    return user;
-   }
-
-   throw new Error("403 - user not found")
+    setTimeout(resolve({user}), 
+    Math.random() * 1000)
+})
 }
 
 const register = (user)=> {
