@@ -2,11 +2,14 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/userSlice";
 import Projects from "../../features/Projects/Projects";
+import News from "../../features/News/News";
+import AboutUs from "../../features/AboutUs/AboutUs";
 import Header from "../../shared/Header/Header";
 import Home from "../../shared/Home/Home";
 import Menu from "../../shared/Menu/Menu";
+import EditProfile from "../../features/EditProfile/EditProfile";
 
-const menuItems = ["Home", "Projects", "News", "Edit Profile", "Edit Projects", "Edit News"]
+const menuItems = ["Home", "Projects", "News","About Us", "Edit Profile", "Edit Projects", "Edit News"]
 const menuItemsAdmin = ["Dasboard", "Manage Users"]
 
 const getMenuItems = (isAdmin) => {
@@ -20,6 +23,12 @@ const displaySubpage = (value) => {
   switch (value) {
     case 'Projects':
         return <Projects/>
+    case 'News':
+      return <News/>;  
+    case 'About Us':
+      return <AboutUs/>; 
+    case 'Edit Profile':
+      return <EditProfile/>;
       
   
     default: return <Home/>

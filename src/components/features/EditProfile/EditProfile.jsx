@@ -1,10 +1,12 @@
-const Register =({onSubmit})=> {
+import { useTranslation } from 'react-i18next'
+
+const EditProfile =({onSubmit})=> {
+
+    const {t} = useTranslation();
 
     const handleSubmit =(event)=> {
         event.preventDefault();
         onSubmit({
-            username: event.target["username"].value,
-            password: event.target["password"].value,
             email: event.target["email"].value,
             realName: event.target["realName"].value,
             bio: event.target["bio"].value,
@@ -12,16 +14,16 @@ const Register =({onSubmit})=> {
         })
 
     }
-
+    
     return <div>
         <form onSubmit={handleSubmit}>
             Username:
             <br/>
-            <input type="text" name="username" required/>
+            <input type="text" name="username"  readonly/>
             <br/>
             Password:
             <br/>
-            <input type="password" name="password" required/>
+            <input type="password" name="password"  readonly/>
             <br/>
             Email:
             <br/>
@@ -39,9 +41,20 @@ const Register =({onSubmit})=> {
             <br/>
             <input type="text" name="image" required/>
             <br/>
-            <button type="submit">REGISTER</button>
+            Membro:
+            <br/>
+            <input type="checkbox" name="isMember"/>
+            <br/>
+            Administrador:
+            <br/>
+            <input type="checkbox" name="isAdmin"/>
+            <br/>
+            <button type="submit">{t("button.saveEditProfile")}</button>
         </form>
     </div>
 }
 
-export default Register;
+//TODO
+//permissões para editar o próprio perfil e não outro (backend?)
+//permissões para editar checkbox
+export default EditProfile;

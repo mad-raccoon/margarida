@@ -11,7 +11,8 @@ const resources = {
         "button.login": "login",
         "button.register": "register",
         "button.showLogin": "show login",
-        "button.showRegister": "show register"
+        "button.showRegister": "show register",
+        "button.saveEditProfile": "Save",
     }
   },
   pt: {
@@ -23,7 +24,8 @@ const resources = {
         "button.login": "entrar",
         "button.register": "registar",
         "button.showLogin": "mostrar login",
-        "button.showRegister": "mostrar registo"
+        "button.showRegister": "mostrar registo",
+        "button.saveEditProfile": "guardar",
     }
   }
 };

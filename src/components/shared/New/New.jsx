@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-const Project = ({title, dateCreated, content, keywords, onEdit}) => {
+const New = ({title, dateCreated, content, keywords, onEdit}) => {
 
     const [isEditMode, setIsEditMode] = useState(false);
     
@@ -38,7 +38,7 @@ const Project = ({title, dateCreated, content, keywords, onEdit}) => {
             </div>
     }
     
-    return <div className="project">
+    return <div className="new">
         <h2>
             {title}, {dateCreated}
         </h2>
@@ -53,4 +53,4 @@ const Project = ({title, dateCreated, content, keywords, onEdit}) => {
     </div>
 }
 
-export default Project;
+export default New;
